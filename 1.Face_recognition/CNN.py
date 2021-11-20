@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 # @Project: Face_recognition 
 # @File: CNN 
-# @Author: Henry Wu 
+# @Author: rtmacha
 # @Date: 2021/09/25 14:07
 
 import dlib

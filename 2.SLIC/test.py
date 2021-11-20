@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 # @Project: SLIC 
 # @File: test 
-# @Author: Henry Wu 
+# @Author: rtmacha
 # @Date: 2021/09/28 11:17
 from skimage import io, color
 

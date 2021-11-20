@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 # @Project: Face_recognition 
 # @File: MTCNN 
-# @Author: Henry Wu 
+# @Author: rtmacha
 # @Date: 2021/09/25 14:36
 
 import cv2

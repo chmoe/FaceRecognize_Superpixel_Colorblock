@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 # @Project: Face_recognition 
 # @File: Dlib_HOG_CSM 
-# @Author: Henry Wu 
+# @Author: rtmacha
 # @Date: 2021/09/25 13:40
 
 import cv2  # conda install opencv

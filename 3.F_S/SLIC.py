@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 # @Project: 3.F_S 
 # @File: SLIC
-# @Author: Henry Wu 
+# @Author: rtmacha
 # @Date: 2021/10/02 10:31
 
 import math

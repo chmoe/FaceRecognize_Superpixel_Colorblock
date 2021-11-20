@@ -1,8 +1,8 @@
 # -*- coding: UTF-8 -*-
 # @Project: Progress 
-# @File: color 
-# @Author: Henry Wu 
-# @Date: 2021/10/06 9:20
+# @File: color 1
+# @Author: rtmacha
+# @Date: 2021/10/12 9:30
 import math
 
 import cv2
@@ -71,7 +71,7 @@ class ColorProcessor(object):
 
                     print("point: \n", point)
                     if point:
-                        path = "./Process_result/{}_{}.png".format(i, counter)
+                        path = "./Process_result1/{}_{}.png".format(i, counter)
                         print("last_color: {}".format(self.last_color))
                         self.save_image(path, point)
                         counter += 1
@@ -83,15 +83,15 @@ class ColorProcessor(object):
         :param point: 上下左右的限定范围
         :return:
         """
-        data_copy = np.copy(self.source_file)
+        data_copy = self.source_file[point[0]:point[1], point[2]:point[3], :]
 
-        for row in range(self.image_height):
-            for col in range(self.image_width):
+        for row in range(point[0], point[1]):
+            for col in range(point[2], point[3]):
                 # print("row: {}, col: {}".format(row, col))
-                if point[2] <= col <= point[3] and point[0] <= row <= point[1]:
+                if self.img_ndarray[row, col] == self.last_color:
                     continue
                 else:
-                    data_copy[row][col] = (0, 0, 0)  # 将RGB通道设置为0
+                    data_copy[row - point[0]][col - point[2]] = (0, 0, 0)  # 将RGB通道设置为0
 
         cv2.imwrite(path, data_copy[:, :, (2, 1, 0)])
 
@@ -178,7 +178,7 @@ class ColorProcessor(object):
 
     def set_color(self, row, col):
         if self.rgb2hex(self.data[row, col]) == self.last_color:  # 属于当前颜色
-            # print("data_col: {}, last_color:{}".format(self.rgb2hex(self.data[row, col]), self.last_color))
+            # print("data_col: {}, last_color:{}".format(self.rgb2hex(source_file[row, col]), self.last_color))
             if self.img_ndarray[row, col] != self.last_color:  # 并且没有标记
                 # print("没有标记")
                 self.img_ndarray[row, col] = self.last_color
